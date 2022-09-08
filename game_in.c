@@ -1,88 +1,73 @@
 #include "cub.h"
 
-int		ft_strlen_p(char **src)
+int		ft_strlen_p(char **ptr)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (ptr[i])
 		i++;
 	return (i);
 }
 
-void	ft_message(char **src)
+int		num_corr_1(char *str, int *i)
 {
-	int	i;
+	int	ret;
 
-	i = -1;
-	if (src != NULL)
+	ret = 0;
+	while (str[*i] != '\0')
 	{
-		while (src[++i] != NULL)
-			free(src[i]);
-		free(src);
-	}
-	printf("Error\nFile don't match to parse.\n");
-	exit(EXIT_FAILURE);
-}
-
-int		num_corr_1(char *file, int *i)
-{
-	int	val;
-
-	val = 0;
-	while (file[*i] != '\0')
-	{
-		if (!(file[*i] >= '0' && file[*i] <= '9'))
+		if (!(str[*i] >= '0' && str[*i] <= '9'))
 		{
-			skip_spaces(file, i);
-			if (file[*i] == '\n' && file[*i + 1] == '\0')
+			skip_spaces(str, i);
+			if (str[*i] == '\n' && str[*i + 1] == '\0')
 				break ;
 			else
 				return (-1);
 		}
-		val = val * 10 + (file[*i] - 48);
+		ret = ret * 10 + (str[*i] - 48);
 		(*i)++;
 	}
-	return (val);
+	return (ret);
 }
 
-int		num_corr_2(char *file, char **src, int *i)
+int		num_corr_2(char *str, char **file, int *i)
 {
 	int	val;
 
 	val = 0;
-	while (file[*i] != '\0')
+	while (str[*i] != '\0')
 	{
-		if (!(file[*i] >= '0' && file[*i] <= '9')
-			&& (file[*i] != ','))
+		if (!(str[*i] >= '0' && str[*i] <= '9')
+			&& (str[*i] != ','))
 			return (-1);
-		if (file[*i] == ',' && file[*i + 1] != '\0')
+		if (str[*i] == ',' && str[*i + 1] != '\0')
 		{
 			(*i)++;
-			if (file[*i] == ',')
-				ft_message(src);
+			if (str[*i] == ',')
+				ft_message_exit(file);
 			break ;
 		}
-		val = val * 10 + (file[*i] - 48);
+		val = val * 10 + (str[*i] - 48);
 		(*i)++;
 	}
 	return (val);
 }
 
-int		num_corr(char *file, char **src, int *i, int key)
+int		num_corr(char *str, char **file, int *i, int key)
 {
 	int	val;
 
 	val = 0;
 	if (key == 1)
 	{
-		val = num_corr_1(file, i);
+		val = num_corr_1(str, i);
 		if (val == -1)
 			return (0);
 	}
 	else
 	{
-		val = num_corr_2(file, src, i);
+		val = num_corr_2(str, file, i);
 		if (val == -1)
 			return (0);
 	}
@@ -91,110 +76,104 @@ int		num_corr(char *file, char **src, int *i, int key)
 	return (0);
 }
 
-void	che_cel_flo_3(char *file, char **src, int *i)
+void	che_cel_flo_3(char *str, char **file, int *i)
 {
 	(*i)++;
-	skip_spaces(file, i);
-	if (file[*i] == ',')
-		ft_message(src);
+	skip_spaces(str, i);
+	if (str[*i] == ',')
+		ft_message_exit(file);
 }
 
-int		che_cel_flo_2(char *src, int i)
+int		che_cel_flo_2(char *str, int i)
 {
-	if (src[i] != 'F' && src[i] != 'C'
-		&& (!((src[i] == 'N' && src[i + 1] == '0')
-			|| (src[i] == 'S' && src[i + 1] == 'O')
-			|| (src[i] == 'W' && src[i + 1] == 'E')
-			|| (src[i] == 'E' && src[i + 1] == 'A'))))
+	if (str[i] != 'F' && str[i] != 'C'
+		&& (!((str[i] == 'N' && str[i + 1] == '0')
+			|| (str[i] == 'S' && str[i + 1] == 'O')
+			|| (str[i] == 'W' && str[i + 1] == 'E')
+			|| (str[i] == 'E' && str[i + 1] == 'A'))))
 		return (1);
 	return (0);
 }
 
-int		che_cel_flo(char *file, char **src)
+int		che_cel_flo(char *str, char **file)
 {
 	int		i;
-	int		val;
 	char	c;
 
-	write(1, "enter che\n", 10);
 	i = 0;
-	val = 0;
 	c = 'C';
-	skip_spaces(file, &i);
-	if (che_cel_flo_2(file, i) == 1)
-		ft_message(src);
-	if (file[i] == 'F')
+	skip_spaces(str, &i);
+	if (che_cel_flo_2(str, i) == 1)
+		ft_message_exit(file);
+	if (str[i] == 'F')
 		c = 'F';
-	else if (file[i] != 'C')
+	else if (str[i] != 'C')
 		return (0);
-	che_cel_flo_3(file, src, &i);
-	if (num_corr(file, src, &i, 0) && num_corr(file, src, &i, 0)
-			&& num_corr(file, src, &i, 1))
+	che_cel_flo_3(str, file, &i);
+	if (num_corr(str, file, &i, 0) && num_corr(str, file, &i, 0)
+			&& num_corr(str, file, &i, 1))
 	{
 		if (c == 'F')
 			return (1);
 		else if (c == 'C')
 			return (2);
 	}
-	ft_message(src);
-	write(1, "leave che\n", 10);
+	ft_message_exit(file);
 	return (0);
 }
 
-int		checker_text(char *file, char **src)
+int		checker_text(char *str, char **file)
 {
 	int	i;
 
 	i = 0;
-	skip_spaces(file, &i);
-	if (!((file[i] == 'N' && file[i + 1] == 'O')
-			|| (file[i] == 'S' && file[i + 1] == 'O')
-			|| (file[i] == 'W' && file[i + 1] == 'E')
-			|| (file[i] == 'E' && file[i + 1] == 'A'))
-			&& file[i] != 'F' && file[i] != 'A')
-		ft_message(src);
-	if (file[i] == 'C' || file[i] == 'F')
+	skip_spaces(str, &i);
+	if (!((str[i] == 'N' && str[i + 1] == 'O')
+			|| (str[i] == 'S' && str[i + 1] == 'O')
+			|| (str[i] == 'W' && str[i + 1] == 'E')
+			|| (str[i] == 'E' && str[i + 1] == 'A'))
+			&& str[i] != 'F' && str[i] != 'A')
+		ft_message_exit(file);
+	if (str[i] == 'C' || str[i] == 'F')
 		return (0);
 	i += 2;
-	skip_spaces(file, &i);
-	if (file[i] == '.' && file[i + 1] == '/' && file[i + 2] == '\n')
+	skip_spaces(str, &i);
+	if (str[i] == '.' && str[i + 1] == '/' && str[i + 2] == '\n')
 		return (1);
-	ft_message(src);
+	ft_message_exit(file);
 	return (0);
 }
 
-int		text_info(char *file)
+int		text_info(char *str)
 {
 	int	i;
 
 	i = 0;
-	skip_spaces(file, &i);
-	if (file[i] == 'N' && file[i + 1] == 'O')
+	skip_spaces(str, &i);
+	if (str[i] == 'N' && str[i + 1] == 'O')
 		return (3);
-	if (file[i] == 'W' && file[i + 1] == 'E')
+	if (str[i] == 'W' && str[i + 1] == 'E')
 		return (2);
-	if (file[i] == 'E' && file[i + 1] == 'A')
+	if (str[i] == 'E' && str[i + 1] == 'A')
 		return (1);
 	return (4);
 }
 
 
-void	game_in2(char *file, char **src, t_mapCheck *ch_game)
+void	game_in2(char *str, char **file, t_mapCheck *ch_game)
 {
-	write(1, "enter here\n", 11);
-	if (che_cel_flo(file, src) == 1)
+	if (che_cel_flo(str, file) == 1)
 		ch_game->flo_col += 1;
-	else if (che_cel_flo(file, src) == 2)
+	else if (che_cel_flo(str, file) == 2)
 		ch_game->flo_col += 1;
-	else if (checker_text(file, src) && text_info(file) == 1)
+	else if (checker_text(str, file) && text_info(str) == 1)
 		ch_game->ea_tex += 1;
-	else if (checker_text(file, src) && text_info(file) == 2)
+	else if (checker_text(str, file) && text_info(str) == 2)
 		ch_game->we_tex += 1;
-	else if (checker_text(file, src) && text_info(file) == 3)
+	else if (checker_text(str, file) && text_info(str) == 3)
 		ch_game->no_tex += 1;
-	else if (checker_text(file, src) && text_info(file) == 4)
+	else if (checker_text(str, file) && text_info(str) == 4)
 		ch_game->so_tex += 1;
-	write(1, "Quit here\n", 10);
 }
 
 void	init_game(t_mapCheck *game)
@@ -216,15 +195,15 @@ int		check_one(t_mapCheck *game)
 	return (0);
 }
 
-void	struc_checker(t_mapCheck *game, char **src)
+void	struc_checker(t_mapCheck *game, char **file)
 {
 	if (!(game->cel_col == 1 && game->flo_col == 1
 			&& game->no_tex == 1 && game->so_tex == 1
 			&& game->we_tex == 1 && game->ea_tex == 1))
-		ft_message(src);
+		ft_message_exit(file);
 }
 
-char	**ft_dupdouble_p(char **file, int i)
+char	**ft_dup_double_p(char **file, int i)
 {
 	char	**ret;
 	int		j;
@@ -264,5 +243,5 @@ char    **game_in(char **file)
 		i++;
 	}
 	struc_checker(&ch_game, file);
-	return (ft_dupdouble_p(file, i + 1));
+	return (ft_dup_double_p(file, i + 1));
 }

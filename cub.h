@@ -8,6 +8,8 @@
 # include <fcntl.h>
 # include <math.h>
 # include <mlx.h>
+# include "gnl/get_next_line.h"
+
 # define EAST 11
 # define WEST 12
 # define NORTH 13
@@ -89,6 +91,10 @@ typedef struct map_check
 
 //Change_Texture
 int		ft_change_texture(game_t *game);
+
+//Check_args
+char	**ft_check_args(int argc, char **argv);
+void	ft_message_exit(char **ptr);
 
 //Check_Button
 void	check_up_button(game_t *game);

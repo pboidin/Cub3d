@@ -11,11 +11,13 @@ int main(int argc, char ** argv)
 	info_t	info;
 	char	**file;
 
-	//Créer une fonction qui va checker les arguments
-	write(1, "First step\n", 11);
+	write(1, "1 - First step\n", 15);
+	file = ft_check_args(argc, argv); // Créer une fonction qui va checker les arguments
+	write(1, "2 - Check_args succeed\n", 23);
 	game.map = game_in(file); // Function qui check l'information transmise par .cub
+	write(1, "3 - Check game_in succeed\n", 26);
 	// Créer une fonction qui va vérifier l'intégrité de la map
-	write(1, "Second step\n", 12);
+	write(1, "4 - Second step\n", 16);
 	info_init(&info, file);
 	if ((game.mlx_ptr = mlx_init()) == NULL)
 		return (EXIT_FAILURE);
