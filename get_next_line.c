@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "cub.h"
 
 void	get_after_nl(char *buf)
 {

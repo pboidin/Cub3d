@@ -87,10 +87,10 @@ void	che_cel_flo_3(char *str, char **file, int *i)
 int		che_cel_flo_2(char *str, int i)
 {
 	if (str[i] != 'F' && str[i] != 'C'
-		&& (!((str[i] == 'N' && str[i + 1] == '0')
-			|| (str[i] == 'S' && str[i + 1] == 'O')
-			|| (str[i] == 'W' && str[i + 1] == 'E')
-			|| (str[i] == 'E' && str[i + 1] == 'A'))))
+		&& (!((str[i] == 'N' && str[i + 1] == 'O')
+				|| (str[i] == 'S' && str[i + 1] == 'O')
+				|| (str[i] == 'W' && str[i + 1] == 'E')
+				|| (str[i] == 'E' && str[i + 1] == 'A'))))
 		return (1);
 	return (0);
 }
@@ -103,8 +103,9 @@ int		che_cel_flo(char *str, char **file)
 	i = 0;
 	c = 'C';
 	skip_spaces(str, &i);
+	printf("==> %c %c %i\n", str[i], str[i + 1], che_cel_flo_2(str, i));
 	if (che_cel_flo_2(str, i) == 1)
-		ft_message_exit(file);
+		ft_message_exit(file); // ERREUR ICI
 	if (str[i] == 'F')
 		c = 'F';
 	else if (str[i] != 'C')

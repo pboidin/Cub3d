@@ -146,7 +146,7 @@ void	ft_message_exit(char **ptr)
 			free(ptr[i]);
 		free(ptr);
 	}
-	printf("ERROR\nDFon't succeed to parse.\n");
+	printf("ERROR\nDon't succeed to parse.\n");
 	exit(EXIT_FAILURE);
 }
 

@@ -5,6 +5,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 # include <fcntl.h>
 # include <math.h>
 # include <mlx.h>
@@ -15,6 +16,7 @@
 # define NORTH 13
 # define SOUTH 14
 # define PI 3.141592635
+# define BUFFER_SIZE 10000
 
 typedef struct	game_s
 {
@@ -104,6 +106,18 @@ void	check_right_button(game_t *game);
 
 //game_info
 char    **game_in(char **file);
+
+//Get_Next_Line
+int		check_nl(char *str);
+int		ft_strlen(char *str);
+char	*get_next_line(int file_d);
+char	*ft_strdup(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+char	*read_file(int file_d);
+char	*get_before_nl(char *buf, int opt);
+char	*join_and_free(char *ret, char *buf);
+void	get_after_nl(char *buf);
+void	ft_zero(char *buf);
 
 //Init_game
 void    check_texture(void *texN, void *texS, void *texW, void *texE);

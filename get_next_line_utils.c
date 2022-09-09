@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "cub.h"
 
 int	ft_strlen(char *str)
 {
@@ -28,30 +28,6 @@ int	check_nl(char *str)
 		i++;
 	}
 	return (0);
-}
-
-char	*ft_strdup(char *str)
-{
-	char	*ret;
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	ret = (char *)malloc(sizeof(char) * (i + 1));
-	if (!ret)
-	{
-		printf("ERROR\nMalloc Fail.\n");
-		exit(EXIT_FAILURE);
-	}
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ret[i] = str[i];
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
