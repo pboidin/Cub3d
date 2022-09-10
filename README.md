@@ -9,12 +9,12 @@ The constraints are as follows:
 - The window management must be perfect : minimization management, passing another window, etc
 - You have to display different textures (you have the choice) depending on if the walls are facing north, south, east, west.
 - Your program must be able to have different colors for the floor and ceiling
-- The program displays the image in a window and follows the following rules:
-  ◦ The left and right arrow keys on the keyboard must allow rotation of the camera (look left and right)
-  ◦ The keys W, A, S and D must allow to move the camera (move the character)
-  ◦ Pressing the ESC key should close the window and exit the program properly
-  ◦ Clicking on the red cross in the window should close the window and exit the program cleanly
-  ◦ The use of images from the minilibX is highly recommended.
+- The program displays the image in a window and follows the following rules:\n
+  ◦ The left and right arrow keys on the keyboard must allow rotation of the camera (look left and right)\n
+  ◦ The keys W, A, S and D must allow to move the camera (move the character)\n
+  ◦ Pressing the ESC key should close the window and exit the program properly\n
+  ◦ Clicking on the red cross in the window should close the window and exit the program cleanly\n
+  ◦ The use of images from the minilibX is highly recommended.\n
 - Your program must take as first argument a scene description file with extension .cub
   ◦ The map must be composed of only these 6 characters: 0 for empty spaces, 1 for walls, and N,S,E or W which represent the starting position of the player and its orientation.
     This simple map must be valid:
