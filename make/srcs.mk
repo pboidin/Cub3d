@@ -1,0 +1,14 @@
+SRCS_SOURCES += srcs/init_game.c
+SRCS_SOURCES += srcs/get_next_line_utils.c
+SRCS_SOURCES += srcs/game_in.c
+SRCS_SOURCES += srcs/raycasting.c
+SRCS_SOURCES += srcs/main.c
+SRCS_SOURCES += srcs/check_button.c
+SRCS_SOURCES += srcs/get_next_line.c
+SRCS_SOURCES += srcs/tools_box.c
+SRCS_SOURCES += srcs/init_info.c
+SRCS_SOURCES += srcs/player_position.c
+SRCS_SOURCES += srcs/change_texture.c
+SRCS_SOURCES += srcs/tools_box_2.c
+SRCS_SOURCES += srcs/check_args.c
+SRCS_SOURCES += srcs/player_move.c
