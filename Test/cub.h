@@ -3,7 +3,7 @@
 
 # include "constants.h"
 # include "structs.h"
-# include "./minilibx_macos/mlx.h"
+# include "./minilibx-linux/mlx.h"
 
 // Attente
 void	check_arguments(int argc, char **argv);
@@ -36,5 +36,6 @@ void	ft_updating(t_game *game);
 //---DRAW---
 void	ft_draw_wall(t_game *game);
 void	ft_drawing(t_game *game);
+void	ft_draw_strip_w(t_rect *rect, int *img, t_reso *reso, t_ray *ray);
 
 #endif

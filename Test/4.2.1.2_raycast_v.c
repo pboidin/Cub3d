@@ -34,7 +34,7 @@ void	ft_get_v_inter_we(t_ray *ray, t_map *map, t_player *player)
 	double	y_tmp;
 	double	sect;
 
-	y = floor(player->y);
+	x = floor(player->x);
 	x_tmp = player->x - x; 
 	y_tmp = x_tmp * tan(ray->angle);
 	y = player->y - y_tmp;
@@ -42,7 +42,7 @@ void	ft_get_v_inter_we(t_ray *ray, t_map *map, t_player *player)
 	if (ft_wall(map, x - 1, y, ray))
 		return ;
 	x_tmp = -1;
-	y_tmp = +x_tmp * tan(ray->angle);
+	y_tmp = x_tmp * tan(ray->angle);
 	sect = sqrt(pow(x_tmp, 2) + pow(y_tmp, 2));
 	while (!ft_wall(map, x - 1, y, ray))
 	{

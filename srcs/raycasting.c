@@ -224,10 +224,10 @@ void	put_wall(game_t *game, float tmp_x, float tmp_y, float ray_angle)
 	dist_2D = 0;
 	dist_2D = sqrt(pow(tmp_x - game->x_player, 2) + pow(game->y_player - tmp_y, 2));
 	fisheyes = dist_2D * cos(ray_angle - game->angle);
-	height = ((60 * DIS_HEI) / fabs(fisheyes));
-	if (height > DIS_HEI)
+	height = ((60 * 700) / fabs(fisheyes));
+	if (height > 700)
 	{
-		y_offset = (height - DIS_HEI) / 1.0;
+		y_offset = (height - 700) / 1.0;
 		height -= y_offset;
 	}
 	if (game->nb_rays <= DIS_WID)

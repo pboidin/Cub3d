@@ -6,7 +6,7 @@ void	ft_upd_rays(t_game *game)
 	int		i;
 
 	angle_ray = game->player.rot_ang - game->rays.angle_view / 2;
-	i -= 1;
+	i = -1;
 	while (++i < game->disp.reso.width)
 	{
 		game->rays.arr[i].angle = angle_ray;

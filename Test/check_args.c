@@ -58,9 +58,9 @@ char	*ft_strcpy(char *dest, const char *src)
 
 void	check_arguments(int argc, char **argv)
 {
-	if ((argc == 2 || argc == 3) && !check_extension(argv[1], ".cub"))
+	if (argc == 3 && !check_extension(argv[1], ".cub"))
 	{
-		printf("Error\nScene description file with wrong extention.\n");
+		printf("Check_ext : %i.\n", check_extension(argv[1], ".cub"));
 		exit(EXIT_SUCCESS);
 	}
 	else

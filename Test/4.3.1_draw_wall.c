@@ -54,5 +54,6 @@ void	ft_draw_wall(t_game *game) // Dessine les murs une colonne à la fois
 		rect.y = ft_get_y_wall_pos(game, wall_hei);
 		rect.hei = wall_hei;
 		rect.tex = ft_get_wall_tex(&game->disp, ray->orienta);
+		ft_draw_strip_w(&rect, game->mlx.img.data, &game->disp.reso, ray);
 	}
 }

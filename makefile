@@ -1,5 +1,5 @@
 #	Names
-NAME_CUB		=	Cub3D
+NAME_CUB		=	cub3D
 
 #	Includes
 -include make/includes.mk
