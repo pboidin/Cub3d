@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 int		ft_next_frame(void *struc)
 {
@@ -19,12 +19,15 @@ int		ft_next_frame(void *struc)
 
 int		ft_launch_game(t_game *game) // Fonction qui démarre le jeu. Appelée une fois que le .cub a été analysé pour vérification et stockage des paramètres.
 {
-	if ((game->mlx.mlx_ptr = mlx_init()) == NULL)
+	game->mlx.mlx_ptr = mlx_init();
+	if (!game->mlx.mlx_ptr)
 		return (EXIT_FAILURE);
-	if ((game->mlx.win_ptr = mlx_new_window(game->mlx.mlx_ptr,
-			game->disp.reso.width, game->disp.reso.height,
-			"Cub3d")) == NULL)
-		return (EXIT_FAILURE);
+	mlx_get_screen_size(game->mlx.mlx_ptr, &game->disp.reso.width, &game->disp.reso.height); // Recupere la taille de l'ecran
+	game->disp.reso.width = 960;
+	game->disp.reso.height = 720;
+	game->mlx.win_ptr = mlx_new_window(game->mlx.mlx_ptr, game->disp.reso.width, game->disp.reso.height, "Cub3d");
+	if (!game->mlx.win_ptr)
+		return (EXIT_FAILURE);;
 	ft_game_init(game);
 	mlx_loop_hook(game->mlx.mlx_ptr, ft_next_frame, game);
 	mlx_loop(game->mlx.mlx_ptr);

@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 t_text	ft_get_wall_tex(t_disp *disp, char orienta)
 {

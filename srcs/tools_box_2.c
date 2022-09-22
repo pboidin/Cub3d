@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 int		ft_south(double angle)
 {
@@ -81,7 +81,7 @@ void	ft_draw_rect(t_rect *rect, int *img, int reso_wid) // Dessine un rectangle 
 
 	rect->bord_wid--;
 	i = -1;
-	while (++i < rect->wid)
+	while (++i < rect->hei)
 	{
 		j = -1;
 		while (++j < rect->wid)

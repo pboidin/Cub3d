@@ -6,7 +6,7 @@
 # include "./minilibx-linux/mlx.h"
 
 // Attente
-void	check_arguments(int argc, char **argv);
+void	check_arguments(int ac, char **av);
 
 //Tools Box
 double	deg_transform(double deg);
@@ -17,6 +17,8 @@ char	*ft_strchr(const char *s, int c);
 int		ft_south(double angle);
 int		ft_wall(t_map *map, double x, double y, t_ray *ray);
 int     ft_west(double angle);
+int     ft_strlen(char *str);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //--LAUNCH GAME--
 int		ft_launch_game(t_game *game);

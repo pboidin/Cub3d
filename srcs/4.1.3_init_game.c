@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void	ft_load_text(void *mlx, t_text *texture)
 {

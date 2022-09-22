@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void    ft_game_init(t_game *game)
 {

@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 int		ft_bit_mapper(t_ray *ray, int bitmap_wi) // En se basant sur l'endroit exact où le rayon frappe le mur, nous pouvons trouver quelle partie de la texture à utiliser pour le mur
 {

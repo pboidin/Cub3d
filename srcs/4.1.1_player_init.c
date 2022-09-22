@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 double	ft_start_orient(char orient)
 {

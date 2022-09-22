@@ -44,8 +44,8 @@ typedef struct	s_colo
 
 typedef struct	s_reso
 {
-	long long	width;
-	long long	height;
+	int	width;
+	int	height;
 }				t_reso;
 
 typedef struct	s_map

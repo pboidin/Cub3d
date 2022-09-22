@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void	ft_get_h_inter_no(t_ray *ray, t_map *map, t_player *player)
 {

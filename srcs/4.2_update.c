@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void	ft_upd_rays(t_game *game)
 {

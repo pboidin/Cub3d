@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 int		ft_close_win(int key, t_game *game) // Fonction appelée chaque fois que l'utilisateur a essayé de fermer la fenêtre (ALT FT ou croix de la fenêtre)
 {

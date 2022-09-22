@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void	ft_get_v_inter_ea(t_ray *ray, t_map *map, t_player *player)
 {

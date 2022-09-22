@@ -1,24 +1,24 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 int	main(int argc, char **argv)
 {
 	int		fd;
 	t_game	game;
 	(void)argc;
-	check_arguments(argc, argv);//Attente
+	check_arguments(argc, argv); //Il faut y mettre ton check ici
 	fd = open(argv[1], O_RDONLY); 
 	if (fd == -1)
 	{
 		printf("Error\nCould not open file %s.\n", argv[1]);
 		exit(EXIT_SUCCESS);
 	}
-	//get_scene(fd, &game.disp); //Attente
+	ft_init_struct(fd, &game.disp); // Il s'agit de l'init ici
 	if (close(fd) == -1)
 	{
 		printf("Error\nCould not close file %s.\n", argv[1]);
 		exit(EXIT_SUCCESS);
 	}
-	//check_scene(&game.disp); //Attente
+	ft_check_map(&game.disp);
 	ft_launch_game(&game);
 	return (0);
 }

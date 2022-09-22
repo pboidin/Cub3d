@@ -1,4 +1,4 @@
-#include "cub.h"
+#include "../includes/cub.h"
 
 void	ft_raycast(t_ray *ray, t_map *map, t_player *player) // Lance 2 rayons pour déterminer la distance entre le joueur et le mur. Un rayon vérifie l'intersection horizontale de la grille et l'autre l'intersection verticale. Le rayon le plus court est conservé comme distance entre le joueur et le mur pour déterminer la hauteur du mur.
 {
