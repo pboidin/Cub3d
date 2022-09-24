@@ -29,9 +29,9 @@ int		ft_key_press(int key, t_game *game) // Fonction appelée à chaque fois qu'
     else if (key == K_D)
         game->player.walk_dir = 'd';
     else if (key == K_LEFT_ARROW)
-        game->player.walk_dir = -1;
+        game->player.turn_dir = -1;
     else if (key == K_RIGHT_ARROW)
-        game->player.walk_dir = 1;
+        game->player.turn_dir = 1;
     else if (key == K_ESC)
     {
     	ft_free_game(game);

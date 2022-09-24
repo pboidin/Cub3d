@@ -4,7 +4,8 @@ int	main(int argc, char **argv)
 {
 	int		fd;
 	t_game	game;
-	(void)argc;
+	// int		i = 0;
+
 	check_arguments(argc, argv); //Il faut y mettre ton check ici
 	fd = open(argv[1], O_RDONLY); 
 	if (fd == -1)

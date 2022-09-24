@@ -6,10 +6,10 @@ t_text	ft_get_wall_tex(t_disp *disp, char orienta)
 		return (disp->NO_tex);
 	else if (orienta == 'S')
 		return (disp->SO_tex);
-	else if (orienta == 'E')
-		return (disp->EA_tex);
-	else
+	else if (orienta == 'W')
 		return (disp->WE_tex);
+	else
+		return (disp->EA_tex);
 }
 
 int		ft_get_y_wall_pos(t_game *game, double wall_hei) // Obtient la position verticale du début du mur.

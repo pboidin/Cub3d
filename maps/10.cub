@@ -1,7 +1,7 @@
-NO ./textures/Bark.xpm
-SO ./textures/Bricks.xpm
-WE ./textures/Dirt.xpm
-EA ./textures/Coal.xpm
+NO ./maps/textures/Bark.xpm
+SO ./maps/textures/Bricks.xpm
+WE ./maps/textures/Dirt.xpm
+EA ./maps/textures/Coal.xpm
 
 C 51,53,51
 F 36,85,1
