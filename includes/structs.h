@@ -79,6 +79,28 @@ typedef struct	s_mlx
 	t_img		img;
 }				t_mlx;
 
+typedef struct s_line
+{
+	int			beg_x;
+	int			beg_y;
+	int			end_x;
+	int			end_y;
+	int			col;
+	int			wid;
+}				t_line;
+
+
+typedef struct s_circle // Pour Bonus
+{
+	int			x;
+	int			y;
+	double		rad;
+	int			col;
+	int			border_col;
+	int			border_wid;
+}				t_circle;
+
+
 typedef struct	s_rect
 {
 	int			x;
@@ -101,6 +123,7 @@ typedef struct	s_disp
 	t_text		EA_tex;
 	t_colo		floor;
 	t_colo		ceilling;	
+	int			mini_map; //BONUS
 }				t_disp;
 
 typedef struct	s_game

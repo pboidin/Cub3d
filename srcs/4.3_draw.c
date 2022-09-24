@@ -31,4 +31,5 @@ void	ft_drawing(t_game *game) // Fonction appelée une fois par image après la 
 	ft_draw_ceilling(game);
     ft_draw_floor(game);
 	ft_draw_wall(game);
+	ft_draw_mini_map(game);
 }

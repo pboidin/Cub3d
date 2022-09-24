@@ -20,6 +20,7 @@ void	ft_set_rays(t_game *game)
 
 void	ft_init_game(t_game *game) // Une grande partie de la mise en place ne peut se faire qu'une fois que le mlx_init a été fait.
 {
+	game->disp.mini_map = game->disp.reso.width / 200; // A retirer Bonus
 	ft_set_rays(game);
 	ft_load_text(game->mlx.mlx_ptr, &game->disp.NO_tex);
 	ft_load_text(game->mlx.mlx_ptr, &game->disp.SO_tex);

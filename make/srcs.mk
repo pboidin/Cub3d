@@ -1,4 +1,5 @@
 SRCS_SOURCES += srcs/main.c
+SRCS_SOURCES += srcs/map.c
 SRCS_SOURCES += srcs/4.1.2_events_init.c
 SRCS_SOURCES += srcs/4.1_game_init.c
 SRCS_SOURCES += srcs/4.2.1.2_raycast_v.c

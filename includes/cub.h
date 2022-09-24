@@ -6,6 +6,12 @@
 # include "../libraries/minilibx-linux/mlx.h"
 # define MAX_LINE 200000
 
+//BONUS
+
+void	    ft_draw_mini_map(t_game *game);
+void	    ft_draw_line(t_line *line, int *img, int reso_wid);
+void	    ft_draw_circle(t_circle *circle, int *img, int reso_wid);
+
 // Attente
 void		check_arguments(int ac, char **av);
 int		    check_extension(char *file, char *extension);
