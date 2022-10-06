@@ -1,10 +1,10 @@
-NO ./maps/textures/Bark.xpm
-SO ./maps/textures/Bricks.xpm
-WE ./maps/textures/Dirt.xpm
-EA ./maps/textures/Coal.xpm
+NO ./maps/textures/jerry.xpm
+SO ./maps/textures/alex.xpm
+WE ./maps/textures/clover.xpm
+EA ./maps/textures/sam.xpm
 
-C 51,53,51
-F 36,85,1
+C 119,216,229
+F 235,180,237
 
 1111111111111111111111111
 1000000000110000000000001
